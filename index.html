@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Education Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8f8f8, #eaeaea);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff5f76, #f7b42c);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Education Facts</h1>
+        <p id="fact"></p>
+        <button id="generateFactBtn">Generate Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            {
+                "fact": "Global Literacy Rates",
+                "description": "As of 2021, the global literacy rate for adults is approximately 86%, with significant disparities between developed and developing countries."
+            },
+            {
+                "fact": "Early Childhood Education",
+                "description": "Studies show that children who attend preschool are more likely to perform better academically and socially in later years compared to those who do not."
+            },
+            {
+                "fact": "Online Learning Growth",
+                "description": "The online education market has seen exponential growth, with projections estimating it will reach over $375 billion by 2026, largely accelerated by the COVID-19 pandemic."
+            },
+            {
+                "fact": "Importance of STEM",
+                "description": "Education in Science, Technology, Engineering, and Mathematics (STEM) is increasingly emphasized, as these fields are projected to grow significantly in the coming years, with many jobs requiring STEM skills."
+            },
+            {
+                "fact": "Education and Income",
+                "description": "There is a strong correlation between education level and income. On average, individuals with a bachelor's degree earn significantly more over their lifetime compared to those with only a high school diploma."
+            },
+            {
+                "fact": "Teacher Impact",
+                "description": "Research indicates that effective teachers can significantly influence student achievement, often more than the school environment or socioeconomic status."
+            },
+            {
+                "fact": "Lifelong Learning",
+                "description": "The concept of lifelong learning has gained traction, emphasizing that education does not stop after formal schooling but continues throughout an individual's life."
+            },
+            {
+                "fact": "Education Technology",
+                "description": "The use of technology in education, such as learning management systems and educational apps, has transformed traditional teaching methods and increased accessibility to learning resources."
+            },
+            {
+                "fact": "Cultural Differences",
+                "description": "Education systems vary widely around the world, influenced by cultural, economic, and political factors, leading to different approaches to teaching and learning."
+            },
+            {
+                "fact": "Mental Health Awareness",
+                "description": "There is a growing recognition of the importance of mental health in education, with many schools implementing programs to support students' emotional well-being alongside academic achievement."
+            }
+        ];
+
+        const factElement = document.getElementById('fact');
+        const generateFactBtn = document.getElementById('generateFactBtn');
+
+        generateFactBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            factElement.innerHTML = `<strong>${randomFact.fact}:</strong> ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
